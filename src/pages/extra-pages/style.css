@@ -1,0 +1,114 @@
+:root {
+  --background-color: #fff; 
+  --text-color: #000; 
+  --button-background: #d6d5e6; 
+  --button-border: #222138; 
+  --handle-background: blue; 
+}
+
+.customNodeBody {
+  width: 200px;
+  height: 40px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.customNode:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  height: 10px;
+  width: 20px;
+  transform: translate(-50%, 0);
+  background: #d6d5e6;
+  z-index: 1000;
+  line-height: 1;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 9px;
+  border: 2px solid #222138;
+}
+
+div.customHandle {
+  width: 100%;
+  height: 100%;
+  background: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  transform: none;
+  border: none;
+  opacity: 0;
+}
+
+.optionsMenu{
+  padding: 3px 5px; /* Adjust padding to make buttons smaller */
+  font-size: 5px;
+}
+/* Add this style to your existing style.css file or create a new one */
+/* Add this style to your existing style.css file or create a new one */
+/* Add this style to your existing style.css file or create a new one */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc; /* Add border */
+    max-width: 400px; /* Set max width as needed */
+    width: 100%; /* Make it responsive */
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  /* Add this style to disable pointer events on nodes when modal is open */
+  .customNode.selected {
+    pointer-events: none;
+  }
+  
+  
+  
+
+  .refresh-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1002; /* Add a higher z-index value */
+    background-color: #ffffff; /* Set your desired background color */
+   /* Set your desired text color */
+    padding: 1px 1px;
+    border: 1px solid #808080; /* Set your desired border color */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .refresh-button:hover {
+    background-color: #999ca173;
+    border: 2px solid #000000 /* Set your desired background color on hover */
+  }
+  

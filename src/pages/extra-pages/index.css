@@ -1,0 +1,89 @@
+.dndflow {
+  display: flex;
+  height: 100vh;
+}
+
+/* Set a fixed width for the sidebar */
+.dndflow .sidebar {
+  width: 250px; /* Set your preferred width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f4f4f4; /* Set your preferred background color */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.dndflow .documents {
+  flex-grow: 7; /* Takes up 8 parts of the 10-part flex container */
+  overflow-y: auto; /* Enable scrollbar for the documents section if needed */
+}
+
+
+.dndflow aside {
+  border-right: 1px solid #eee;
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #fcfcfc;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow .dndnode {
+  height: 20px;
+  padding: 4px;
+  border: 1px solid #1a192b;
+  border-radius: 13px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.dndflow .dndnode.input {
+  border-color: #0041d0;
+}
+
+.dndflow .dndnode.add {
+  border-radius: 0px;
+  border-color: #808080;
+  width: 80%,
+
+}
+.dndflow .dndnode.output {
+  border-color: #ff0072;
+}
+
+.dndflow .spacer {
+  flex-grow: 1;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.run-buttons {
+  flex-grow: 3;
+}
+.run-button {
+  background-color: green;
+  color: white;
+  padding: 7px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  border-radius: 13px;
+  transition: background-color 0.3s ease;
+}
+.run-button:hover {
+  background-color: darkgreen;
+}
