@@ -86,24 +86,6 @@ const SamplePage1 = () => {
     setEdges((els) => updateEdge(oldEdge, newConnection, els));
   }, []);
 
-  const handleDelete = () => {
-    // Find the index of the selected node in the nodes array
-    const nodeIndex = nodes.findIndex((node) => node.id === selectedNodeId);
-
-    if (nodeIndex !== -1) {
-      // Create a new array without the deleted node
-      const updatedNodes = [...nodes.slice(0, nodeIndex), ...nodes.slice(nodeIndex + 1)];
-
-      // Update the nodes state with the new array
-      setNodes(updatedNodes);
-    }
-
-    setisModalOpen(false);
-  };
-
-
-
-
   const onEdgeUpdateEnd = useCallback((_, edge) => {
     if (!edgeUpdateSuccessful.current) {
       setEdges((eds) => eds.filter((e) => e.id !== edge.id));
