@@ -16,7 +16,6 @@ import { FiRefreshCw } from 'react-icons/fi';
 import Sidebar from './Sidebar';
 
 import CustomNode from './CustomNode';
-import CustomNode1 from './CustomNode1';
 import FloatingEdge from './FloatingEdge';
 
 const STORAGE_KEY = 'reactflow_data';
@@ -103,35 +102,8 @@ const SamplePage1 = () => {
   };
 
 
-  const dialogObjs = (dialogData) => {
-
-    console.log(dialogData);
-  };
 
 
-  const handleNodeDelete = (nodeId) => {
-    // Find the index of the selected node in the nodes array
-    const nodeIndex = nodes.findIndex((node) => node.id === nodeId);
-
-    if (nodeIndex !== -1) {
-      // Create a new array without the deleted node
-      const updatedNodes = [...nodes.slice(0, nodeIndex), ...nodes.slice(nodeIndex + 1)];
-
-      // Update the nodes state with the new array
-      setNodes(updatedNodes);
-    }
-
-    setisModalOpen(false);
-  };
-  const removeNodeById = (nodeId) => {
-    console.log(nodeId)
-    setNodes((prevNodes) => prevNodes.filter((node) => node.id !== nodeId));
-  };
-  const handleChangeLabel = () => {
-    console.log(`Changing label for node with ID ${selectedNodeId}`);
-    onChangeLabel(selectedNodeId, newLabel);
-    onClose();
-  };
   const onEdgeUpdateEnd = useCallback((_, edge) => {
     if (!edgeUpdateSuccessful.current) {
       setEdges((eds) => eds.filter((e) => e.id !== edge.id));
@@ -182,16 +154,7 @@ const SamplePage1 = () => {
     [reactFlowInstance, nodes]
   );
 
-  const openDialog = (nodeId) => {
-    setSelectedNodeId(nodeId); // Set the selectedNodeId before opening the modal
-    setisModalOpen(true); // Open the modal
-    console.log(nodeId);
-  };
-  
-
-  const closeDialog = () => {
-    setSelectedNodeId(null);
-  };
+ 
   
   return (
     <div className="dndflow">
@@ -226,9 +189,6 @@ const SamplePage1 = () => {
             <div className="refresh-button" onClick={refreshGraph}>
             <FiRefreshCw size={10} />
           </div>
-          
-          <CustomNode  dialogObjs = {dialogObjs} />
-          <CustomNode1 dialogObjs = {dialogObjs} />
           </ReactFlow>
         </div>
       </ReactFlowProvider>

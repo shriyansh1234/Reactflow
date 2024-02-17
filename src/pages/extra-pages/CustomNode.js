@@ -4,7 +4,7 @@ import { Handle, Position, useStore } from 'reactflow';
 import Dialog from './Dialog';
 import './style.css';
 
-export default function CustomNode({ id, dialogObjs, data}) {
+export default function CustomNode({ id, data}) {
   const connectionNodeId = useStore((state) => state.connectionNodeId);
   const isConnecting = !!connectionNodeId;
   const isTarget = connectionNodeId && connectionNodeId !== id;
@@ -18,19 +18,23 @@ export default function CustomNode({ id, dialogObjs, data}) {
 
 
   return (
-    <div className={`customNode ${isSelected ? 'selected' : ''}`} onClick={() => setIsSelected(!isSelected)}>
-      <Dialog
+    <div className={`customNode ${isSelected ? 'selected' : ''}`} 
+    onClick={() => setIsSelected(!isSelected)}>
+
+      {/* <Dialog
         dialogObjs={dialogObjs}
         id = {id}
         isOpen={isSelected}
         onClose={() => setIsSelected(false)}
-      />
+      /> */}
 
       <div
         className="customNodeBody"
+
         style={{
           borderStyle: isTarget ? 'dashed' : 'solid',
           backgroundColor: isTarget ? '#ffcce3' : '#ccd9f6',
+          
         }}
       >
         {!isConnecting && (

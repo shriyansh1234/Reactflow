@@ -12,7 +12,6 @@ function FloatingEdge({ id, source, target, markerEnd, style, label }) {
 
   const [editableLabel, setEditableLabel] = useState(label || defaultLabel);
   const [isEditing, setIsEditing] = useState(false);
-  const [isEditingedge, setIsEditingedge] = useState(false);
 
   if (!sourceNode || !targetNode) {
     return null;
@@ -54,8 +53,8 @@ function FloatingEdge({ id, source, target, markerEnd, style, label }) {
 
   const handleLabelClick = () => {
     setIsEditing(true);
-    const contentWidth = editableLabel.length * 8; // Adjust the factor based on your font size
-    const maxWidth = 80; // Set a maximum width if needed
+    const contentWidth = editableLabel.length * 8; 
+    const maxWidth = 80; 
 
     const inputWidth = Math.min(contentWidth, maxWidth);
   };
@@ -74,7 +73,7 @@ function FloatingEdge({ id, source, target, markerEnd, style, label }) {
       target,
       markerEnd,
       style,  // If style is defined
-      label,  // If label is defined
+      label, 
     });
   }, [id, source, target, markerEnd, style, label]);
 

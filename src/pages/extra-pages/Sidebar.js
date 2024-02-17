@@ -51,7 +51,9 @@ export default () => {
     <div className="dndflow">
       <aside className="sidebar">
         <div className="documents">
-          You can drag these documents to the pane on the right to create a workflow.
+          You can drag these documents to the pane on the right to create a workflow. <br>
+          </br>
+         
           
         
           {/* <div className="dndnode add" onClick={handleAddButtonClick}>
@@ -117,6 +119,7 @@ export default () => {
           <div className="dndnode output" onDragStart={(event) => onDragStart(event, 'Run Analytics')} draggable>
             Run Analytics
           </div>
+          To delete any document or connecting edge from the workflow press "backspace" key after clicking on them
         </div>
         <div className="run-buttons">
           <div className="run-button" onClick={() => handleRunButtonClick()}>

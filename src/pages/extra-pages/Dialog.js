@@ -4,23 +4,7 @@ import Modal from 'react-modal';
 import { Button } from '@mui/material';
 
 const Dialog = ({dialogObjs, id, isOpen, onClose}) => {
-  
-  const handleDelete = () => {
-    // Call onDelete with the nodeId when delete is pressed
-    console.log(`Deleting label ID ${id}`)
-    dialogObjs(id)
-    onClose()
-  };
-   const clickTest = () =>{
-        console.log("button test")
-        dialogObjs('test1')
-    };
-  
-  // const handleChangeLabel = () => {
-  //   onChangeLabel(id, newLabel);
-  //   onClose();
-  // };
-  
+
   return (
     <Modal
       isOpen={isOpen}
@@ -32,18 +16,8 @@ const Dialog = ({dialogObjs, id, isOpen, onClose}) => {
     >
       <div className="modal-content">
         <p>Node Options:{id}</p>
-        
-        {/* <ul> */}
-        
-          <li>
-            <Button onClick={handleDelete}>Delete Node</Button>
-            <Button className = 'refresh-button' onClick = {clickTest} >TEST</Button>
-          </li>
-
-          {/* <li>
-            <button onClick={handleChangeLabel}>Change Label</button>
-          </li> */}
-        {/* </ul> */}
+        <p>To delete node please press "backspace" key</p>
+      
         <button onClick={onClose}>Close</button>
       </div>
     </Modal>
